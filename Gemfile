@@ -7,6 +7,9 @@ ruby "3.0.4"
 gem 'webpacker'
 gem 'react-rails'
 
+#Postgres Database
+gem 'pg'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
