@@ -1,7 +1,16 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  things: []
+  things: [
+    {
+      name: "test",
+      guid: "123"
+    },
+    {
+      name: "test2",
+      guid: "456"
+    }
+  ]
 };
 
 function rootReducer(state, action) {
