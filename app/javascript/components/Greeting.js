@@ -25,7 +25,7 @@ export function getThingsSuccess(json) {
   }
 }
 
-class HelloWorld extends React.Component {
+class Greeting extends React.Component {
   render() {
     const { things } = this.props;
     const thingsList = things.map((thing) => {
@@ -50,8 +50,8 @@ const structuredSelector = createStructuredSelector({
 
 const mapDispatchToProps = { getThings };
 
-HelloWorld.propTypes = {
+Greeting.propTypes = {
   greeting: PropTypes.string
 };
 
-export default connect(structuredSelector, mapDispatchToProps)(HelloWorld);
+export default connect(structuredSelector, mapDispatchToProps)(Greeting);
