@@ -1,4 +1,4 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 
 import thunk from 'redux-thunk';
 
@@ -7,18 +7,17 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const initialState = {
   greetings: [
     {
-      message: "Default greeting"
-    }
-  ]
+      message: 'Default greeting',
+    },
+  ],
 };
 
 function rootReducer(state, action) {
-  console.log(action.type);
   switch (action.type) {
-    case "GET_GREETINGS_SUCCESS":
+    case 'GET_GREETINGS_SUCCESS':
       return { greetings: action.json.greetings };
     default:
-      return state
+      return state;
   }
   // return state;
 }
@@ -30,8 +29,8 @@ export default function configureStore() {
     composeWithDevTools(
       applyMiddleware(
         thunk,
-      )
-    )
+      ),
+    ),
   );
   return store;
 }
