@@ -1,9 +1,10 @@
 class V1::GreetingsController < ApplicationController
   def index
+    size = Greeting.all.count
+    greeting = Greeting.find(rand(1..size))
     render json: { greetings: [
       {
-        name: 'some-thing',
-        guid: '4512-4587-54965'
+        message: greeting.message
       }
     ] }.to_json
   end

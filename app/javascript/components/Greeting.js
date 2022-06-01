@@ -30,17 +30,16 @@ export function getGreetingsSuccess(json) {
 class Greeting extends React.Component {
   render() {
     const { greetings } = this.props;
-    const greetingsList = greetings.map((greeting) => {
-      return <li key={uuidv4()}>{greeting.name} {greeting.guid}</li>
-    })
 
     return (
       <React.Fragment>
-        Greeting: {this.props.greeting}
+        <em>Get from the API endpoint '/v1/greetings.json': </em>
         <br />
         <button className="getGreetingsBtn" onClick={() => this.props.getGreetings()}>Get Greetings</button>
         <br />
-        <ul>{ greetingsList }</ul>
+        <br />
+        Your fetched greeting: {this.props.greeting}
+        <p>{greetings[0].message}</p>
       </React.Fragment>
     );
   }

@@ -7,12 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const initialState = {
   greetings: [
     {
-      name: "test",
-      guid: "123"
-    },
-    {
-      name: "test2",
-      guid: "456"
+      message: "Default greeting"
     }
   ]
 };

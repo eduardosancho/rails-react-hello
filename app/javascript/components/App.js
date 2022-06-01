@@ -21,7 +21,7 @@ class App extends React.Component {
             <hr />
             <Routes>
               <Route path="/" element={"Hello World"} />
-              <Route path="/greetings" element={ <Greeting greeting="Friend"/> } />
+              <Route path="/greetings" element={ <Greeting /> } />
             <React.Fragment>
             </React.Fragment>
             </Routes>
