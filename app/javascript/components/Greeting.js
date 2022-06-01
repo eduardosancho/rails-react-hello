@@ -4,6 +4,8 @@ import { createStructuredSelector } from "reselect";
 
 import PropTypes from "prop-types"
 
+import { v4 as uuidv4 } from 'uuid';
+
 const GET_THINGS_REQUEST = 'GET_THINGS_REQUEST';
 const GET_THINGS_SUCCESS = 'GET_THINGS_SUCCESS';
 
@@ -29,7 +31,7 @@ class Greeting extends React.Component {
   render() {
     const { things } = this.props;
     const thingsList = things.map((thing) => {
-      return <li>{thing.name} {thing.guid}</li>
+      return <li key={uuidv4()}>{thing.name} {thing.guid}</li>
     })
 
     return (
