@@ -2,7 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 
 import thunk from 'redux-thunk';
 
-import { composedWithDevTools, composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
   things: [

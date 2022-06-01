@@ -13,7 +13,7 @@ function getThings() {
   console.log('getThings() Action!!');
   return dispatch => {
     dispatch({ type: GET_THINGS_REQUEST });
-    return fetch(`v1/things.json`)
+    return fetch(`v1/greetings.json`)
       .then(response => response.json())
       .then(json => dispatch(getThingsSuccess(json)))
       .catch(error => console.log(error));

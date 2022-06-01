@@ -10,7 +10,7 @@ const NavigationBar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/hello">Greeting</NavLink>
+          <NavLink to="/greetings">Greetings</NavLink>
         </li>
       </ul>
     </nav>
