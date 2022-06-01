@@ -6,51 +6,51 @@ import PropTypes from "prop-types"
 
 import { v4 as uuidv4 } from 'uuid';
 
-const GET_THINGS_REQUEST = 'GET_THINGS_REQUEST';
-const GET_THINGS_SUCCESS = 'GET_THINGS_SUCCESS';
+const GET_GREETINGS_REQUEST = 'GET_GREETINGS_REQUEST';
+const GET_GREETINGS_SUCCESS = 'GET_GREETINGS_SUCCESS';
 
-function getThings() {
-  console.log('getThings() Action!!');
+function getGreetings() {
+  console.log('getGreetings() Action!!');
   return dispatch => {
-    dispatch({ type: GET_THINGS_REQUEST });
+    dispatch({ type: GET_GREETINGS_REQUEST });
     return fetch(`v1/greetings.json`)
       .then(response => response.json())
-      .then(json => dispatch(getThingsSuccess(json)))
+      .then(json => dispatch(getGreetingsSuccess(json)))
       .catch(error => console.log(error));
   };
 };
 
-export function getThingsSuccess(json) {
+export function getGreetingsSuccess(json) {
   return {
-    type: GET_THINGS_SUCCESS,
+    type: GET_GREETINGS_SUCCESS,
     json
   }
 }
 
 class Greeting extends React.Component {
   render() {
-    const { things } = this.props;
-    const thingsList = things.map((thing) => {
-      return <li key={uuidv4()}>{thing.name} {thing.guid}</li>
+    const { greetings } = this.props;
+    const greetingsList = greetings.map((greeting) => {
+      return <li key={uuidv4()}>{greeting.name} {greeting.guid}</li>
     })
 
     return (
       <React.Fragment>
         Greeting: {this.props.greeting}
         <br />
-        <button className="getThingsBtn" onClick={() => this.props.getThings()}>getThings</button>
+        <button className="getGreetingsBtn" onClick={() => this.props.getGreetings()}>Get Greetings</button>
         <br />
-        <ul>{ thingsList }</ul>
+        <ul>{ greetingsList }</ul>
       </React.Fragment>
     );
   }
 }
 
 const structuredSelector = createStructuredSelector({
-  things: state => state.things,
+  greetings: state => state.greetings,
 });
 
-const mapDispatchToProps = { getThings };
+const mapDispatchToProps = { getGreetings };
 
 Greeting.propTypes = {
   greeting: PropTypes.string

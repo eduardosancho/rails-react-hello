@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
-  things: [
+  greetings: [
     {
       name: "test",
       guid: "123"
@@ -20,8 +20,8 @@ const initialState = {
 function rootReducer(state, action) {
   console.log(action.type);
   switch (action.type) {
-    case "GET_THINGS_SUCCESS":
-      return { things: action.json.things };
+    case "GET_GREETINGS_SUCCESS":
+      return { greetings: action.json.greetings };
     default:
       return state
   }

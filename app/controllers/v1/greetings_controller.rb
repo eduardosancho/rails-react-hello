@@ -1,6 +1,6 @@
 class V1::GreetingsController < ApplicationController
   def index
-    render json: { things: [
+    render json: { greetings: [
       {
         name: 'some-thing',
         guid: '4512-4587-54965'
